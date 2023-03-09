@@ -3,11 +3,13 @@ import counterReducer from '../features/counter/counterSlice';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './rootSaga';
 import authReducer from 'features/auth/authSlice';
+import dashboardReducer from 'features/dashboard/dashboardSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({
   counter: counterReducer,
   auth: authReducer,
+  dashboard: dashboardReducer,
 });
 export const store = configureStore({
   reducer: rootReducer,
